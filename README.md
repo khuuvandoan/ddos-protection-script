@@ -1,5 +1,5 @@
 # DDoS Protection for Linux Machines
-WARNING! This script usually does not work properly with LXD/LXC Containers, please only use on KVM-Based VPS's or Bare Metal Servers.
+CẢNH BÁO! Tập lệnh này thường không hoạt động đúng với LXD / LXC Containers, vui lòng chỉ sử dụng trên KVM-based VPS hoặc Máy chủ kim loại trần.
 
 
 ## For CentOS/RHEL/AlmaLinux
@@ -13,7 +13,7 @@ wget https://raw.githubusercontent.com/khuuvandoan/ddos-protection-script/main/a
 ```
 
 
-After running the script, IPTables custom configuration was applied. If IPTables is not installed on your OS, it will be installed when running the script. 
+Sau khi chạy tập lệnh, cấu hình tùy chỉnh IPTables đã được áp dụng. Nếu IPTables không được cài đặt trên hệ điều hành của bạn, nó sẽ được cài đặt khi chạy tập lệnh.
 
 ### What does this script do?
-This script uses IPtables. It will do a good job at protecting your machine against DDoS attacks, but it is never a bad idea to have additional DDoS protection from providers like PATH.NET, OVH, Cloudflare (only if absolutely necessary), etc. It adds configuration to drop invalid packets, drop packest which are TCP packets which are new and aren't SYN, block packets with odd/suspicious TCP flags, block packets with suspicious MSS values, block all spoofed packets, disable ICMP protocol (your machine will not respond to pings, making it impossible for people to send an attack to your VPS using the ping of death or a Layer 4 attack), limit the # of connections per IP connected, drop fragments in all chains, limit all RST packets, add bruteforce protection for SSH, and finally, add protection against port scanning.
+Tập lệnh này sử dụng IPtables. Nó sẽ làm tốt công việc bảo vệ máy của bạn chống lại các cuộc tấn công DDoS, nhưng không bao giờ là một ý tưởng tồi nếu có thêm tính năng bảo vệ DDoS từ các nhà cung cấp như PATH.NET, OVH, Cloudflare (chỉ khi thực sự cần thiết), v.v. Nó bổ sung cấu hình để loại bỏ gói không hợp lệ, thả gói là gói TCP mới và không phải là SYN, chặn gói có cờ TCP kỳ lạ / đáng ngờ, chặn gói có giá trị MSS đáng ngờ, chặn tất cả các gói giả mạo, vô hiệu hóa giao thức ICMP (máy của bạn sẽ không phản hồi với ping , khiến mọi người không thể gửi một cuộc tấn công đến VPS của bạn bằng cách sử dụng ping chết hoặc tấn công Lớp 4), giới hạn số lượng kết nối trên mỗi IP được kết nối, thả các đoạn trong tất cả các chuỗi, giới hạn tất cả các gói RST, thêm bảo vệ bruteforce cho SSH và cuối cùng, thêm bảo vệ chống lại quá trình quét cổng.
